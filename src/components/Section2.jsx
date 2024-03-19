@@ -1,8 +1,8 @@
 const Section2 = () => {
     return (
     <div className="hero  text-zinc-950">{/* border-4 border-indigo-600 */}
-        <div className="hero-content flex-col lg:flex-row bg-white-500 py-16 px-10 ">
-            <div className="bg-purple-200 ">
+        <div className="hero-content flex-col lg:flex-row bg-white-500 py-14 px-10 ">
+            <div className="">
                 <h1 className="text-4xl xs:text-5xl leading-tight font-bold ">
                     Are you eager to kickstart your journey in software development?</h1>
                 <p className="text-2xl py-3">Our platform caters specifically to freshers like you, providing tailored resources, guidance, and job 
