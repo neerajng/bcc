@@ -4,7 +4,7 @@ import logo from '../assets/images/logo.jpg'
 const Navbar = () => {
 
   return (
-    <div className="navbar md:px-24 px-10 top-0 left-0 w-full
+    <div className="navbar sticky z-50 md:px-24 px-10 top-0 left-0 w-full shadow-bottom
      text-black font-bold">{/* border-4 border-indigo-600 */}
 
       <div className="navbar-start">
@@ -17,13 +17,14 @@ const Navbar = () => {
           <li className='text-xl'><a>Home</a></li>
           <li className='text-xl'><a>Business Solutions</a></li>
           <li className='text-xl'><a>Find Jobs</a></li>
+          <li className='text-xl'><a>Contact Us</a></li>
         </ul>
       </div>
 
-      <div className="navbar-end  ">
-        <button className="text-white bg-purple-700 border-white 
+      <div className="navbar-end  bg-purple-700" >
+        {/* <button className="text-white bg-purple-700 border-white 
             border-4 rounded-full xxs:text-xs xs:text-xl">
-          Contact US</button>       
+          Contact US</button>        */}
       </div>
       <div className='navbar-dropdown '>
           <div className="dropdown dropdown-bottom dropdown-end">
@@ -38,9 +39,11 @@ const Navbar = () => {
               <li><a className='text-black'>Home</a></li>
               <li><a className='text-black'>Business Solutions</a></li>
               <li><a className='text-black'>Find Jobs</a></li>
+              <li><a className='text-black'>Contact Us</a></li>
             </ul>
           </div>
         </div>
+      
 
     </div>
   );

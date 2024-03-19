@@ -1,9 +1,9 @@
 const HeroSection = () => {
     return (
     <div className="hero  text-zinc-950">{/* border-4 border-indigo-600 */}
-        <div className="hero-content flex-col lg:flex-row bg-white-500 py-16 px-10">
+        <div className="hero-content flex-col lg:flex-row bg-white-500 py-16 px-10 ">
             <div className="bg-white-500">
-                <h1 className="text-5xl leading-tight font-bold">Expert Guidance, Successful Outcomes!</h1>
+                <h1 className="text-4xl xs:text-5xl leading-tight font-bold">Expert Guidance, Successful Outcomes!</h1>
                 <p className="text-2xl py-3">We promise expert guidance through our consultants and continual enhancement.</p>
 
                 <p className="text-xl py-3">Whether you&apos;re a savvy client or a budding developer, our platform bridges the gap 

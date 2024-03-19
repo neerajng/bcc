@@ -3,7 +3,7 @@ const Section1 = () => {
     <div className="hero text-zinc-950">{/* border-4 border-indigo-600 */}
         <div className="hero-content flex-col lg:flex-row bg-white-500 py-16 px-10">
             <div className="bg-white-500">
-                <h1 className="text-5xl leading-tight font-bold">Are you a customer exploring business solutions?</h1>
+                <h1 className="text-4xl xs:text-5xl leading-tight font-bold">Are you a customer exploring business solutions?</h1>
 
                 <p className="text-xl py-3">For customers seeking cost-effective software solutions, 
                 we offer a comprehensive range of customizable products and services designed to meet your unique needs. 

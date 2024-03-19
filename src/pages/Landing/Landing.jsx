@@ -9,17 +9,17 @@ import Section3 from '../../components/Section3'
 const Landing=()=>{
 
     return (
-      <>
+      <div className="w-auto">
         <Navbar />
         <HeroSection/>
-        <div className=' py-5'></div>{/* className='bg-sky-100 py-5' */}
+        <div className=' py-1'></div>{/* className='bg-sky-100 py-5' */}
         <Section1 />
-        <div className=' py-5'></div>{/* className='bg-sky-100 py-5' */}
+        <div className=' py-1'></div>{/* className='bg-sky-100 py-5' */}
         <Section2 />
-        <div className=' py-5'></div>{/* className='bg-sky-100 py-5' */}
+        <div className=' py-1'></div>{/* className='bg-sky-100 py-5' */}
         <Section3 />
         <div className=' py-10'></div>{/* className='bg-sky-100 py-5' */}
-      </>
+      </div>
       )
 }
 

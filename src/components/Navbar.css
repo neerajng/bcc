@@ -1,0 +1,8 @@
+.navbar {
+    background: rgb(251,251,253);
+    background: linear-gradient(90deg, rgba(251,251,253,1) 0%, rgba(173,216,230,1) 75%);
+}
+
+.shadow-bottom {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
