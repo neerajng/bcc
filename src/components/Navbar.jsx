@@ -14,10 +14,10 @@ const Navbar = () => {
 
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 ">
-          <li className='text-xl'><a>Home</a></li>
-          <li className='text-xl'><a>Business Solutions</a></li>
-          <li className='text-xl'><a>Find Jobs</a></li>
-          <li className='text-xl'><a>Contact Us</a></li>
+          <li className='text-xl'><a href="#hero">Home</a></li>
+          <li className='text-xl'><a href="#section1">Business Solutions</a></li>
+          <li className='text-xl'><a href="#section2">Find Jobs</a></li>
+          <li className='text-xl'><a href="#section3">Contact Us</a></li>
         </ul>
       </div>
 
@@ -36,10 +36,10 @@ const Navbar = () => {
             </div>
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow 
           bg-base-100 rounded-box w-52">
-              <li><a className='text-black'>Home</a></li>
-              <li><a className='text-black'>Business Solutions</a></li>
-              <li><a className='text-black'>Find Jobs</a></li>
-              <li><a className='text-black'>Contact Us</a></li>
+              <li><a className='text-black' href="#hero">Home</a></li>
+              <li><a className='text-black' href="#section1">Business Solutions</a></li>
+              <li><a className='text-black' href="#section2">Find Jobs</a></li>
+              <li><a className='text-black' href="#section3">Contact Us</a></li>
             </ul>
           </div>
         </div>

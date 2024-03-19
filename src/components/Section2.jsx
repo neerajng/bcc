@@ -1,6 +1,6 @@
 const Section2 = () => {
     return (
-    <div className="hero  text-zinc-950">{/* border-4 border-indigo-600 */}
+    <div id="section2" className="hero  text-zinc-950 scroll-my-24">{/* border-4 border-indigo-600 */}
         <div className="hero-content flex-col lg:flex-row bg-white-500 py-14 px-10 ">
             <div className="">
                 <h1 className="text-4xl xs:text-5xl leading-tight font-bold ">
@@ -12,7 +12,7 @@ const Section2 = () => {
                 Join our vibrant community of learners, developers, and clients to exchange ideas, collaborate on projects, and propel your career.</p>  
 
                 <p className="text-xl py-3">Together, let&apos;s build a brighter future powered by technology and driven by passion. Join us today and let&apos;s 
-                shape tomorrow, one line of code at a time!<a href="#" className="text-indigo-600 font-bold no-underline hover:underline"> Contact us now.</a></p>          
+                shape tomorrow, one line of code at a time!<a href="#section3" className="text-indigo-600 font-bold no-underline hover:underline"> Contact us now.</a></p>          
 
             </div>
         </div>
