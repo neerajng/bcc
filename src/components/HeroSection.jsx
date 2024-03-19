@@ -1,6 +1,6 @@
 const HeroSection = () => {
     return (
-    <div id="hero"  className="hero text-zinc-950 scroll-my-24">{/* border-4 border-indigo-600 */}
+    <div id="home"  className="hero text-zinc-950 scroll-my-24">{/* border-4 border-indigo-600 */}
         <div className="hero-content flex-col lg:flex-row bg-white-500 py-14 px-10 ">
             <div className="bg-white-500">
                 <h1 className="text-4xl xs:text-5xl leading-tight font-bold">Expert Guidance, Successful Outcomes!</h1>
