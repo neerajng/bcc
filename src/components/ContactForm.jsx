@@ -1,6 +1,11 @@
 const ContactForm = () => {
+
+    const handleSubmit = (event) => {
+        event.preventDefault();         
+    };
+
     return (
-        <div className="bg-white p-8 rounded-lg flex flex-col shadow-lg">
+        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg flex flex-col shadow-lg">
 
             <div className="border-b border-gray-900/10 pb-12">
                 <h2 className="text-base leading-7  text-purple-600 font-bold">Send us a Message</h2>
@@ -14,63 +19,59 @@ const ContactForm = () => {
 
                 <div className=" mt-6 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
                     <div className="sm:col-span-3">
-                        <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-                            First name
-                        </label>
-                        <div className="mt-2">
-                            <input
-                                type="text"
-                                name="first-name"
-                                id="first-name"
-                                autoComplete="given-name"
-                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            />
-                        </div>
+                        <input
+                            type="text"
+                            name="first-name"
+                            id="first-name"
+                            autoComplete="given-name"
+                            placeholder="First name*"
+                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 
+                            shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
+                            focus:ring-2 focus:ring-inset focus:ring-indigo-600 placeholder-py-1.5 px-3
+                            sm:text-sm sm:leading-6"
+                        />
                     </div>
 
                     <div className="sm:col-span-3">
-                        <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
-                            Last name
-                        </label>
-                        <div className="mt-2">
-                            <input
-                                type="text"
-                                name="last-name"
-                                id="last-name"
-                                autoComplete="family-name"
-                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            />
-                        </div>
+                        <input
+                            type="text"
+                            name="last-name"
+                            id="last-name"
+                            autoComplete="family-name"
+                            placeholder="Last name*"
+                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 
+                            shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
+                            focus:ring-2 focus:ring-inset focus:ring-indigo-600 placeholder-py-1.5 px-3
+                            sm:text-sm sm:leading-6"
+                        />
                     </div>
 
-                    <div className="sm:col-span-4">
-                        <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                            Email address*
-                        </label>
-                        <div className="mt-2">
-                            <input
-                                id="email"
-                                name="email"
-                                type="email"
-                                autoComplete="email"
-                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            />
-                        </div>
+                    <div className="sm:col-span-6">
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            autoComplete="email"
+                            placeholder="Email address*"
+                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 
+                            shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
+                            focus:ring-2 focus:ring-inset focus:ring-indigo-600 placeholder-py-1.5 px-3
+                            sm:text-sm sm:leading-6"
+                        />
                     </div>
 
                     <div className="sm:col-span-3 xxs:mb-10 sm:mb-0">
-                        <label htmlFor="otp" className="block text-sm font-medium leading-6 text-gray-900">
-                            OTP
-                        </label>
-                        <div className="mt-2">
-                            <input
-                                id="otp"
-                                name="otp"
-                                type="text"
-                                autoComplete="otp"
-                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            />
-                        </div>
+                        <input
+                            id="otp"
+                            name="otp"
+                            type="text"
+                            autoComplete="otp"
+                            placeholder="OTP*"
+                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 
+                            shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
+                            focus:ring-2 focus:ring-inset focus:ring-indigo-600 placeholder-py-1.5 px-3
+                            sm:text-sm sm:leading-6"
+                        />
                     </div>
 
                     <div className="sm:col-span-3 relative ">
@@ -78,22 +79,33 @@ const ContactForm = () => {
                          bg-purple-700 border-purple-700 border-0 rounded-full">
                             Get OTP</button>
                     </div>
+
+                    <div className="sm:col-span-6">
+                        <input
+                            id="phone-number"
+                            name="phone-number"
+                            type="text"
+                            autoComplete="tel"
+                            placeholder="Phone number*"
+                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 
+                            shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
+                            focus:ring-2 focus:ring-inset focus:ring-indigo-600 placeholder-py-1.5 px-3
+                            sm:text-sm sm:leading-6"
+                        />
+                    </div>
                     
                     <div className="col-span-full">
-                        <label htmlFor="message" className="block text-sm font-medium leading-6 text-gray-900">
-                        Leave us a message..
-                        </label>
-                        <div className="mt-2">
-                            <textarea                                 
-                                name="message"
-                                id="message" 
-                                autoComplete="off"                               
-                                className="block w-full resize rounded-md border-0 py-1.5 
-                                text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 
-                                placeholder:text-gray-400 focus:ring-2 focus:ring-inset 
-                                focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            />
-                        </div>
+                        <textarea                                 
+                            name="message"
+                            id="message" 
+                            autoComplete="off"                               
+                            placeholder="Leave us a message.."
+                            className="block w-full resize rounded-md border-0 py-1.5 
+                            text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 
+                            placeholder:text-gray-400 focus:ring-2 focus:ring-inset 
+                            focus:ring-indigo-600 placeholder-py-1.5 px-3
+                            sm:text-sm sm:leading-6"
+                        />
                     </div>
 
                     <div className="sm:col-span-4 ">
@@ -104,7 +116,7 @@ const ContactForm = () => {
 
                 </div>
             </div>
-        </div>
+        </form>
     );
 };
 
