@@ -41,7 +41,7 @@ const Navbar = () => {
             </div>
             {isOpen && (
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white
-                                        bg-base-100 rounded-box w-52">
+                                       rounded-box w-52">
               <li><a className='text-black' href="#home">Home</a></li>
               <li><a className='text-black' href="#business">Business Solutions</a></li>
               <li><a className='text-black' href="#findjobs">Find Jobs</a></li>
