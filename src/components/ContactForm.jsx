@@ -8,7 +8,7 @@ const ContactForm = () => {
         <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg flex flex-col shadow-lg">
 
             <div className="border-b border-gray-900/10 pb-12">
-                <h2 className="text-base leading-7  text-purple-600 font-bold">Send us a Message</h2>
+                <h2 className="text-base leading-7  text-indigo-600 font-bold">Send us a Message</h2>
 
                 <select className="select border-gray-900/10 w-full max-w-xs mt-4 overflow-hidden">
                     <option disabled selected className="">
@@ -76,7 +76,7 @@ const ContactForm = () => {
 
                     <div className="sm:col-span-3 relative ">
                         <button className="text-white absolute inset-x-0 bottom-0
-                         bg-purple-700 border-indigo-700 border-0 rounded-full">
+                         bg-indigo-600 rounded-full">
                             Get OTP</button>
                     </div>
 
@@ -110,7 +110,7 @@ const ContactForm = () => {
 
                     <div className="sm:col-span-4 ">
                         <button className="text-white inset-x-0 bottom-0
-                         bg-purple-700 border-purple-700 border-4 rounded-full">
+                         bg-indigo-600 border-indigo-600 border-4 rounded-full px-10">
                             Submit</button>
                     </div>
 
