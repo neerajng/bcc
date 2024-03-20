@@ -8,7 +8,7 @@ import Section3 from '../../components/Section3'
 
 const Landing=()=>{
 
-    return (
+  return (
       <div className="w-auto">
         <Navbar />
         <HeroSection/>

@@ -76,7 +76,7 @@ const ContactForm = () => {
 
                     <div className="sm:col-span-3 relative ">
                         <button className="text-white absolute inset-x-0 bottom-0
-                         bg-purple-700 border-purple-700 border-0 rounded-full">
+                         bg-purple-700 border-indigo-700 border-0 rounded-full">
                             Get OTP</button>
                     </div>
 

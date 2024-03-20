@@ -1,3 +1,5 @@
+import bcc_client from '../assets/images/bcc_client.svg/'
+
 const Section1 = () => {
     return (
     <div id="business" className="hero text-zinc-950  scroll-my-24">{/* border-4 border-indigo-600 */}
@@ -14,6 +16,7 @@ const Section1 = () => {
                 className="text-indigo-600 font-bold no-underline hover:underline">Contact us now.</a></p>          
 
             </div>
+        <img src={bcc_client} className="max-w-sm rounded-lg" />
         </div>
     </div>
     );

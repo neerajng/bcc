@@ -1,3 +1,4 @@
+import bcc_dev from '../assets/images/bcc_dev.svg/'
 const Section2 = () => {
     return (
     <div id="findjobs" className="hero  text-zinc-950 scroll-my-24">{/* border-4 border-indigo-600 */}
@@ -15,6 +16,7 @@ const Section2 = () => {
                 shape tomorrow, one line of code at a time!<a href="#contactus" className="text-indigo-600 font-bold no-underline hover:underline"> Contact us now.</a></p>          
 
             </div>
+            <img src={bcc_dev} className="max-w-sm rounded-lg" />
         </div>
     </div>
     );

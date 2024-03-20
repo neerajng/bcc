@@ -4,7 +4,7 @@ import logo from '../assets/images/logo.jpg'
 
 const Navbar = () => {
 
-  const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
