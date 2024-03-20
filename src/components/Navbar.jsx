@@ -33,14 +33,14 @@ const Navbar = () => {
           Contact US</button>        */}
       </div>
       <div className='navbar-dropdown '>
-          <div className="dropdown dropdown-bottom dropdown-end">
+          <div className="dropdown dropdown-bottom dropdown-end ">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden" onClick={toggleDropdown}>
             <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
             </div>
             {isOpen && (
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow 
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white
                                         bg-base-100 rounded-box w-52">
               <li><a className='text-black' href="#home">Home</a></li>
               <li><a className='text-black' href="#business">Business Solutions</a></li>

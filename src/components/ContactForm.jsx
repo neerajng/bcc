@@ -5,19 +5,21 @@ const ContactForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg flex flex-col shadow-lg">
+        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg flex flex-col 
+        shadow-lg">
 
-            <div className="border-b border-gray-900/10 pb-12">
+            <div className="border-b border-gray-900/10 pb-12 ">
                 <h2 className="text-base leading-7  text-indigo-600 font-bold">Send us a Message</h2>
 
-                <select className="select border-gray-900/10 w-full max-w-xs mt-4 overflow-hidden">
+                <select className="select border-gray-900/10 w-full max-w-xs mt-4 
+                bg-white overflow-hidden">
                     <option disabled selected className="">
                         Organization/Job seeker</option>
                     <option className="max-w-xs overflow-hidden">Organization</option>
                     <option className="max-w-xs overflow-hidden">Job seeker</option>
                 </select> 
 
-                <div className=" mt-6 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+                <div className=" mt-6 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6 ">
                     <div className="sm:col-span-3">
                         <input
                             type="text"
@@ -28,7 +30,7 @@ const ContactForm = () => {
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 
                             shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
                             focus:ring-2 focus:ring-inset focus:ring-indigo-600 placeholder-py-1.5 px-3
-                            sm:text-sm sm:leading-6"
+                            sm:text-sm sm:leading-6 bg-white"
                         />
                     </div>
 
@@ -42,7 +44,7 @@ const ContactForm = () => {
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 
                             shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
                             focus:ring-2 focus:ring-inset focus:ring-indigo-600 placeholder-py-1.5 px-3
-                            sm:text-sm sm:leading-6"
+                            sm:text-sm sm:leading-6 bg-white"
                         />
                     </div>
 
@@ -56,7 +58,7 @@ const ContactForm = () => {
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 
                             shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
                             focus:ring-2 focus:ring-inset focus:ring-indigo-600 placeholder-py-1.5 px-3
-                            sm:text-sm sm:leading-6"
+                            sm:text-sm sm:leading-6 bg-white"
                         />
                     </div>
 
@@ -70,7 +72,7 @@ const ContactForm = () => {
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 
                             shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
                             focus:ring-2 focus:ring-inset focus:ring-indigo-600 placeholder-py-1.5 px-3
-                            sm:text-sm sm:leading-6"
+                            sm:text-sm sm:leading-6 bg-white"
                         />
                     </div>
 
@@ -90,7 +92,7 @@ const ContactForm = () => {
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 
                             shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
                             focus:ring-2 focus:ring-inset focus:ring-indigo-600 placeholder-py-1.5 px-3
-                            sm:text-sm sm:leading-6"
+                            sm:text-sm sm:leading-6 bg-white"
                         />
                     </div>
                     
@@ -104,7 +106,7 @@ const ContactForm = () => {
                             text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 
                             placeholder:text-gray-400 focus:ring-2 focus:ring-inset 
                             focus:ring-indigo-600 placeholder-py-1.5 px-3
-                            sm:text-sm sm:leading-6"
+                            sm:text-sm sm:leading-6 bg-white"
                         />
                     </div>
 
