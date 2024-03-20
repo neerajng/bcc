@@ -74,8 +74,8 @@ const ContactForm = () => {
                         />
                     </div>
 
-                    <div className="sm:col-span-3 relative ">
-                        <button className="text-white absolute inset-x-0 bottom-0
+                    <div className="sm:col-span-2 relative ">
+                        <button className="text-white absolute inset-x-0 bottom-0 py-1.5
                          bg-indigo-600 rounded-full">
                             Get OTP</button>
                     </div>
@@ -110,7 +110,7 @@ const ContactForm = () => {
 
                     <div className="sm:col-span-4 ">
                         <button className="text-white inset-x-0 bottom-0
-                         bg-indigo-600 border-indigo-600 border-4 rounded-full px-10">
+                         bg-indigo-600 border-indigo-600 border-4 rounded-full px-10 py-2">
                             Submit</button>
                     </div>
 
