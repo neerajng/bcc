@@ -1,7 +1,10 @@
+
 import { useFormik } from "formik";
 import { submitSchema } from '../utils/validationSchemas';
 import { AnimatePresence, motion } from "framer-motion";
 import { MdError } from 'react-icons/md';
+
+const apiUrl = import.meta.env.DEV ? import.meta.env.VITE_API_URL_DEV : import.meta.env.VITE_API_URL_PROD;
 
 const ContactForm = () => {
 
@@ -22,7 +25,38 @@ const ContactForm = () => {
             console.log(values);
         },
     })
-    console.log(errors);
+    
+    const handleGetOTP = async (e) => {
+        e.preventDefault();
+        if (!values.email) {
+            // If email is not provided, show error message
+            console.log(values.email+"not available")
+            return;
+        }
+
+        try {
+            // Make API call to send OTP email
+            const response = await fetch(`${apiUrl}/sendEmail`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: values.email }),
+            });
+
+            if (response.ok) {
+                // OTP email sent successfully
+                const data = await response.json();
+                console.log(data.message);                
+            } else {
+                // Handle error response from the API
+                const errorData = await response.json();
+                console.error('Failed to send OTP email:', errorData.message);
+            }
+        } catch (error) {
+            console.error('Error sending OTP email:', error);
+        }
+    };
 
     return (
         <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg flex flex-col 
@@ -191,7 +225,9 @@ const ContactForm = () => {
 
                     <div className="sm:col-span-2 relative ">
                         <button className="text-white absolute inset-x-0 bottom-0 py-1.5
-                         bg-indigo-600 rounded-full">
+                         bg-indigo-600 rounded-full"
+                         onClick={handleGetOTP}
+                        >
                             Get OTP</button>
                     </div>
 

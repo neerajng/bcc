@@ -7,7 +7,7 @@ const App=()=> {
 
   return (
     <div >
-      <Landing />      
+      <Landing />   
     </div>
   )
 }
