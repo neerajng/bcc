@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import { submitSchema } from '../utils/validationSchemas';
 import { AnimatePresence, motion } from "framer-motion";
-import { MdError } from 'react-icons/md';
+import { MdError, MdErrorOutline } from 'react-icons/md';
 import { Bounce, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -11,6 +11,23 @@ const apiUrl = import.meta.env.DEV ? import.meta.env.VITE_API_URL_DEV : import.m
 const ContactForm = () => {
 
     const [otp, setOtp] = useState("");
+    const [otpButtonDisabled, setOtpButtonDisabled] = useState(false);
+    const [countdownValue, setCountdownValue] = useState(60);
+    useEffect(() => {
+        if (otpButtonDisabled) {
+            const timer = setTimeout(() => {
+                setCountdownValue(prevValue => prevValue - 1);
+            }, 1000);
+
+            // Clear timeout when component unmounts or countdown reaches 0
+            if (countdownValue === 0) {
+                setOtpButtonDisabled(false);
+            }
+
+            return () => clearTimeout(timer);
+        }
+    }, [otpButtonDisabled, countdownValue]);
+
     const initialValues = {
         dropdown: "",
         firstName: "",
@@ -91,6 +108,7 @@ const ContactForm = () => {
                 const data = await response.json();
                 console.log(data.message, data.otp);
                 setOtp(data.otp)
+                setOtpButtonDisabled(true);                
             } else {
                 // Handle error response from the API
                 const errorData = await response.json();
@@ -237,16 +255,34 @@ const ContactForm = () => {
                     <div className="sm:col-span-2 relative ">
                         <button
                             className={`text-white absolute inset-x-0 bottom-0 py-1.5 rounded-full text-sm 
-                            ${values.email && !errors.email ? 'bg-indigo-600' : 'bg-indigo-400'}`}
-                            style={{ width: '120px', height: '40px' }} 
+                            ${otpButtonDisabled ? 'bg-indigo-300' : ''}
+                            ${values.email && !errors.email ? 'bg-indigo-600' : 'bg-indigo-300'}`}
+                            style={{ width: '120px', height: '40px' }}
                             onClick={handleGetOTP}
-                            disabled={!values.email || errors.email}
+                            disabled={!values.email || errors.email || otpButtonDisabled}
                         >
                             {values.email && !errors.email ? 'Get OTP' : 'Verify Email'}
+
                         </button>
                     </div>
-
+                    
                     <div className="sm:col-span-6">
+                    <AnimatePresence>
+                            {otpButtonDisabled && (
+                                <motion.div
+                                    className="flex items-center gap-1 px-4 my-1 font-semibold text-xs 
+                                    text-green-600 bg-green-50 rounded"
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 10 }}
+                                    transition={{ duration: 0.2 }}
+                                    role="alert"
+                                >
+                                    <MdErrorOutline />
+                                    <span>Check mail and enter OTP. Next OTP available in {countdownValue} seconds</span>
+                                </motion.div>
+                            )}
+                    </AnimatePresence>
                         <input
                             type="text"
                             name="otp"
