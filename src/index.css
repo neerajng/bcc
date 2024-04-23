@@ -13,7 +13,7 @@ body {
   min-width: 320px;
   min-height: 100dvh;
   background: rgb(251,251,253);
-  background: linear-gradient(90deg, rgba(251,251,253,1) 0%, rgba(173,216,230,1) 75%);
+  background: linear-gradient(90deg, rgba(251,251,253,1) 0%, rgba(186,209,255) 75%);
 }
 
 h1 {

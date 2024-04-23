@@ -41,7 +41,7 @@ const ContactForm = () => {
                         const data = await response.json();
                         console.log(data.message);
                         // Trigger a success toast
-                        toast.success('🦄 Wow so easy!', {
+                        toast.success('✅ Thank you! We have received your message and will contact you shortly.', {
                             position: "bottom-center",
                             autoClose: 5000,
                             hideProgressBar: false,
