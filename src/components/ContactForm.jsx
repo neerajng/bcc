@@ -100,8 +100,8 @@ const ContactForm = () => {
                 >
                     <option disabled selected value="" hidden>
                         Organization/Job seeker</option>
-                    <option value="organization" className="max-w-xs overflow-hidden">Organization</option>
-                    <option value="job_seeker" className="max-w-xs overflow-hidden">Job seeker</option>
+                    <option value="Organization" className="max-w-xs overflow-hidden">Organization</option>
+                    <option value="Job Seeker" className="max-w-xs overflow-hidden">Job Seeker</option>
                 </select>
                 <AnimatePresence>
                     {errors.dropdown && touched.dropdown && (
