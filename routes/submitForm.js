@@ -16,8 +16,15 @@ const transporter = nodemailer.createTransport({
 
 const formCtrl = async (req, res) => {
   try{
-    const { dropdown, firstName, lastName, email, otp, phone, message } =await req.body;
+    const { dropdown, firstName, lastName, email, otp, phone, message, genOtp } =await req.body;
+    const otpString = otp.toString();
+    const genOtpString = genOtp.toString();    
+    console.log(otpString === genOtpString);
     
+      if (otpString !== genOtpString) { 
+        return res.status(400).json({ success: false, message: "Invalid OTP" });
+      }
+      
       const formValues = {
         type: dropdown,
         firstName: firstName,

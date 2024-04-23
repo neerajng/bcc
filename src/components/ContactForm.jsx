@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import { useFormik } from "formik";
 import { submitSchema } from '../utils/validationSchemas';
 import { AnimatePresence, motion } from "framer-motion";
@@ -6,8 +6,9 @@ import { MdError } from 'react-icons/md';
 
 const apiUrl = import.meta.env.DEV ? import.meta.env.VITE_API_URL_DEV : import.meta.env.VITE_API_URL_PROD;
 
-const ContactForm = () => {    
-    
+const ContactForm = () => { 
+
+    const [otp, setOtp] = useState("");
     const initialValues = {
         dropdown: "",
         firstName: "",
@@ -18,18 +19,19 @@ const ContactForm = () => {
         message: "",
     };
 
-    const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
+    const { values, errors, touched, handleBlur, handleChange, handleSubmit, setErrors } = useFormik({
         initialValues: initialValues,
         validationSchema: submitSchema,
         onSubmit: async (values, { setSubmitting }) => {
             try {
-                console.log(values)
+                const formValues = { ...values, genOtp: otp };
+                console.log(formValues);
                 const response = await fetch(`${apiUrl}/submitForm`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(values),
+                    body: JSON.stringify(formValues),
                 });
     
                 if (response.ok) {
@@ -38,6 +40,7 @@ const ContactForm = () => {
                 } else {
                     const errorData = await response.json();
                     console.log('Failed to submit form:', errorData.message);
+                    setErrors({ otp: errorData.message });
                 }
             } catch (error) {
                 console.log('Error submitting form:', error);
@@ -70,7 +73,8 @@ const ContactForm = () => {
             if (response.ok) {
                 // OTP email sent successfully
                 const data = await response.json();
-                console.log(data.message);                
+                console.log(data.message, data.otp);
+                setOtp(data.otp)                
             } else {
                 // Handle error response from the API
                 const errorData = await response.json();

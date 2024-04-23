@@ -39,7 +39,7 @@ const otpCtrl = async (req, res) => {
         // Send email
         await transporter.sendMail(mailOptions);
         console.log('Email sent successfully!');
-        return res.status(200).json({ success: true, message: 'Email sent successfully!' });
+        return res.status(200).json({ success: true, message: 'Email sent successfully!',otp: otp });
       } catch (error) {
         console.log('Error sending email:', error);
         return res.status(500).json({ success: false, error: error.message });
