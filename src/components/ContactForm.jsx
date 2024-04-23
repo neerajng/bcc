@@ -238,6 +238,7 @@ const ContactForm = () => {
                         <button
                             className={`text-white absolute inset-x-0 bottom-0 py-1.5 rounded-full text-sm 
                             ${values.email && !errors.email ? 'bg-indigo-600' : 'bg-indigo-400'}`}
+                            style={{ width: '120px', height: '40px' }} 
                             onClick={handleGetOTP}
                             disabled={!values.email || errors.email}
                         >
