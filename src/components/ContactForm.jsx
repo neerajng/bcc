@@ -1,4 +1,4 @@
-
+// import { useState } from "react";
 import { useFormik } from "formik";
 import { submitSchema } from '../utils/validationSchemas';
 import { AnimatePresence, motion } from "framer-motion";
@@ -7,7 +7,8 @@ import { MdError } from 'react-icons/md';
 const apiUrl = import.meta.env.DEV ? import.meta.env.VITE_API_URL_DEV : import.meta.env.VITE_API_URL_PROD;
 
 const ContactForm = () => {
-
+    
+    
     const initialValues = {
         dropdown: "",
         firstName: "",
@@ -21,13 +22,36 @@ const ContactForm = () => {
     const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues: initialValues,
         validationSchema: submitSchema,
-        onSubmit: (values) => {
-            console.log(values);
+        onSubmit: async (values, { setSubmitting }) => {
+            try {
+                console.log(values)
+                const response = await fetch(`${apiUrl}/submitForm`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(values),
+                });
+    
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(data.message);
+                } else {
+                    const errorData = await response.json();
+                    console.log('Failed to submit form:', errorData.message);
+                }
+            } catch (error) {
+                console.log('Error submitting form:', error);
+            } finally {
+                setSubmitting(false);
+            }
         },
-    })
+    });
+    
     
     const handleGetOTP = async (e) => {
         e.preventDefault();
+        
         if (!values.email) {
             // If email is not provided, show error message
             console.log(values.email+"not available")
@@ -51,12 +75,12 @@ const ContactForm = () => {
             } else {
                 // Handle error response from the API
                 const errorData = await response.json();
-                console.error('Failed to send OTP email:', errorData.message);
+                console.log('Failed to send OTP email:', errorData.message);
             }
         } catch (error) {
-            console.error('Error sending OTP email:', error);
+            console.log('Error sending OTP email:', error);
         }
-    };
+    };   
 
     return (
         <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg flex flex-col 
@@ -159,7 +183,7 @@ const ContactForm = () => {
                         </AnimatePresence>
                     </div>
 
-                    <div className="sm:col-span-6">
+                    <div className="sm:col-span-4 xxs:mb-10 sm:mb-0">
                         <input
                             type="email"
                             name="email"
@@ -191,7 +215,18 @@ const ContactForm = () => {
                         </AnimatePresence>
                     </div>
 
-                    <div className="sm:col-span-3 xxs:mb-10 sm:mb-0">
+                    <div className="sm:col-span-2 relative ">
+                        <button                         
+                            className={`text-white absolute inset-x-0 bottom-0 py-1.5 rounded-full text-sm 
+                            ${values.email && !errors.email ? 'bg-indigo-600' : 'bg-indigo-400'}`}
+                            onClick={handleGetOTP}
+                            disabled={!values.email || errors.email}
+                            >
+                            {values.email && !errors.email ? 'Get OTP' : 'Verify Email'}
+                        </button>                        
+                    </div>
+
+                    <div className="sm:col-span-6">
                         <input
                             type="text"
                             name="otp"
@@ -223,14 +258,7 @@ const ContactForm = () => {
                         </AnimatePresence>
                     </div>
 
-                    <div className="sm:col-span-2 relative ">
-                        <button className="text-white absolute inset-x-0 bottom-0 py-1.5
-                         bg-indigo-600 rounded-full"
-                         onClick={handleGetOTP}
-                        >
-                            Get OTP</button>
-                    </div>
-
+                    
                     <div className="sm:col-span-6">
                         <input
                             type="text"

@@ -4,6 +4,16 @@ import nodemailer from 'nodemailer';
 import otpGenerator from 'otp-generate';
 
 const router = Router();
+// nodemailer setup
+// Create a Nodemailer transporter
+const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  service: 'Gmail',
+  auth: {
+    user: process.env.VITE_USER_MAIL,
+    pass: process.env.VITE_USER_PASS
+  },
+});
 
 const otpCtrl = async (req, res) => {
   
@@ -15,20 +25,11 @@ const otpCtrl = async (req, res) => {
     
     const otp = otpGenerator(6);    
     console.log(email,otp)
-    // nodemailer setup
-    const sendEmail = async (email, otp) => {
-      // Create a Nodemailer transporter
-      const transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        service: 'Gmail',
-        auth: {
-          user: process.env.VITE_USER_MAIL,
-          pass: process.env.VITE_USER_PASS
-        },
-      });
+    
+    const sendEmail = async (email, otp) => {      
       
       const mailOptions = {
-        from: process.env.VITE_USER_PASS,
+        from: process.env.VITE_USER_MAIL,
         to: email,
         subject: 'BCC - OTP for Email Verification ✔️',
         text: `Your OTP is: ${otp}. Please use this code to verify your email.`,
@@ -51,6 +52,43 @@ const otpCtrl = async (req, res) => {
   }
 }
 
+const formCtrl = async (req, res) => {
+  try{
+    const { dropdown, firstName, lastName, email, otp, phone, message } =await req.body;
+    
+      const formValues = {
+        type: dropdown,
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        otp: otp,
+        phone: phone,
+        message: message,
+      };
+      const mailSubmitOptions = {
+        from: process.env.VITE_USER_PASS,
+        to: email,
+        subject: 'Form Submission ✔️',
+        text: JSON.stringify(formValues),
+      };
+
+      try {
+        // Send email
+        await transporter.sendMail(mailSubmitOptions);
+        console.log('Form Email sent successfully!');
+        return res.status(200).json({ success: true, message: 'Email sent successfully!' });
+      } catch (error) {
+        console.log('Error sending email:', error);
+        return res.status(500).json({ success: false, error: error.message });
+      }
+
+  } catch (error) {
+    return res.status(500).json({ success: false, error: error.message });
+  }
+
+}
+
 router.post("/sendEmail", otpCtrl);
+router.post("/submitForm", formCtrl);
 
 export default router;
