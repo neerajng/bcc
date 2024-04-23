@@ -6,8 +6,7 @@ import { MdError } from 'react-icons/md';
 
 const apiUrl = import.meta.env.DEV ? import.meta.env.VITE_API_URL_DEV : import.meta.env.VITE_API_URL_PROD;
 
-const ContactForm = () => {
-    
+const ContactForm = () => {    
     
     const initialValues = {
         dropdown: "",
