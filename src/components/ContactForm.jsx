@@ -108,7 +108,7 @@ const ContactForm = () => {
                 const data = await response.json();
                 console.log(data.message, data.otp);
                 setOtp(data.otp)
-                setOtpButtonDisabled(true);                
+                setOtpButtonDisabled(true);
             } else {
                 // Handle error response from the API
                 const errorData = await response.json();
@@ -265,9 +265,9 @@ const ContactForm = () => {
 
                         </button>
                     </div>
-                    
+
                     <div className="sm:col-span-6">
-                    <AnimatePresence>
+                        <AnimatePresence>
                             {otpButtonDisabled && (
                                 <motion.div
                                     className="flex items-center gap-1 px-4 my-1 font-semibold text-xs 
@@ -282,7 +282,7 @@ const ContactForm = () => {
                                     <span>Check mail and enter OTP. Next OTP available in {countdownValue} seconds</span>
                                 </motion.div>
                             )}
-                    </AnimatePresence>
+                        </AnimatePresence>
                         <input
                             type="text"
                             name="otp"
