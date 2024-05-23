@@ -13,6 +13,7 @@ const ContactForm = () => {
     const [otp, setOtp] = useState("");
     const [otpButtonDisabled, setOtpButtonDisabled] = useState(false);
     const [countdownValue, setCountdownValue] = useState(60);
+    const [otpMessageVisible, setOtpMessageVisible] = useState(false);
     useEffect(() => {
         if (otpButtonDisabled) {
             const timer = setTimeout(() => {
@@ -57,6 +58,7 @@ const ContactForm = () => {
                     if (response.ok) {
                         const data = await response.json();
                         console.log(data.message);
+                        setOtpMessageVisible(false);
                         // Trigger a success toast
                         toast.success('✅ Thank you! We have received your message and will contact you shortly.', {
                             position: "bottom-center",
@@ -86,7 +88,6 @@ const ContactForm = () => {
 
     const handleGetOTP = async (e) => {
         e.preventDefault();
-
         if (!values.email) {
             // If email is not provided, show error message
             console.log(values.email + "not available")
@@ -109,6 +110,7 @@ const ContactForm = () => {
                 console.log(data.message, data.otp);
                 setOtp(data.otp)
                 setOtpButtonDisabled(true);
+                setOtpMessageVisible(true);
             } else {
                 // Handle error response from the API
                 const errorData = await response.json();
@@ -268,7 +270,7 @@ const ContactForm = () => {
 
                     <div className="sm:col-span-6">
                         <AnimatePresence>
-                            {otpButtonDisabled && (
+                            {otpMessageVisible && otpButtonDisabled && (
                                 <motion.div
                                     className="flex items-center gap-1 px-4 my-1 font-semibold text-xs 
                                     text-green-600 bg-green-50 rounded"
