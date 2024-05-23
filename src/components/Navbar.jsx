@@ -15,7 +15,7 @@ const Navbar = () => {
 
       <div className="navbar-start">
 
-        <img src={logo} alt="Brand Logo" className="h-20 w-auto  bg-purple-600"/>
+        <img src={logo} alt="Brand Logo" className="h-20 w-aut"/>
       </div>
 
       <div className="navbar-center hidden lg:flex">
