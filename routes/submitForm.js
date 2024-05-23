@@ -38,28 +38,65 @@ const formCtrl = async (req, res) => {
         to: email, // Change this to business mail later
         subject: 'Form Submission ✔️',
         html: `
-            <html>
-            <head>
-                <style>
-                    table {
-                        font-family: Arial, sans-serif;
-                        border-collapse: collapse;
-                        width: 100%;
-                    }
-    
-                    th, td {
-                        border: 1px solid #dddddd;
-                        text-align: left;
-                        padding: 8px;
-                    }
-    
-                    th {
-                        background-color: #f2f2f2;
-                    }
-                </style>
-            </head>
-            <body>
+        <html>
+        <head>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    color: #333;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f4f4f4;
+                }
+        
+                .container {
+                    max-width: 600px;
+                    margin: 30px auto;
+                    background-color: #fff;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+        
+                h2 {
+                    color: #4CAF50;
+                    text-align: center;
+                }
+        
+                p {
+                    font-size: 1rem;
+                    line-height: 1.6;
+                }
+        
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 20px 0;
+                }
+        
+                th, td {
+                    padding: 12px;
+                    border-bottom: 1px solid #ddd;
+                    text-align: left;
+                }
+        
+                th {
+                    background-color: #f2f2f2;
+                    color: #555;
+                }
+        
+                .footer {
+                    text-align: center;
+                    margin-top: 20px;
+                    font-size: 0.9rem;
+                    color: #777;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
                 <h2>Form Submission Details</h2>
+                <p>Please find the details of your form submission below:</p>
                 <table>
                     <tr>
                         <th>Type</th>
@@ -78,10 +115,6 @@ const formCtrl = async (req, res) => {
                         <td>${formValues.email}</td>
                     </tr>
                     <tr>
-                        <th>OTP</th>
-                        <td>${formValues.otp}</td>
-                    </tr>
-                    <tr>
                         <th>Phone</th>
                         <td>${formValues.phone}</td>
                     </tr>
@@ -90,8 +123,14 @@ const formCtrl = async (req, res) => {
                         <td>${formValues.message}</td>
                     </tr>
                 </table>
-            </body>
-            </html>
+                <p>Thank you for reaching out to us. We have received your message and will get back to you shortly.</p>
+                <p>Regards,<br/>
+                Brittston Consulting Company Pvt. Ltd.</p>
+                </div>
+            </div>
+        </body>
+        </html>
+        
         `,
     };
     
