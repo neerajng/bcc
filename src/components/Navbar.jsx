@@ -10,12 +10,12 @@ const Navbar = () => {
         setIsOpen(!isOpen);
     };
   return (
-    <div className="navbar sticky z-50 md:px-24 px-10 top-0 left-0 w-full shadow-bottom
-     text-black font-bold">{/* border-4 border-indigo-600 */}
+    <div className="navbar sticky z-50 md:px-20 px-10 top-0 left-0 w-full shadow-bottom
+     text-black font-bold ">{/* border-4 border-indigo-600 */}
 
       <div className="navbar-start">
 
-        <img src={logo} alt="Brand Logo" className="h-20 w-auto mr-2" />
+        <img src={logo} alt="Brand Logo" className="h-20 w-auto  bg-purple-600"/>
       </div>
 
       <div className="navbar-center hidden lg:flex">
@@ -27,7 +27,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="navbar-end  bg-purple-700" >
+      <div className="navbar-end  bg-purple-700 " >
         {/* <button className="text-white bg-purple-700 border-white 
             border-4 rounded-full xxs:text-xs xs:text-xl">
           Contact US</button>        */}
