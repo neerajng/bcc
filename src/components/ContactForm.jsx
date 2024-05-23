@@ -220,7 +220,7 @@ const ContactForm = () => {
                         </AnimatePresence>
                     </div>
 
-                    <div className="sm:col-span-4 xxs:mb-10 sm:mb-0">
+                    <div className="sm:col-span-4 xxs:mb-10 sm:mb-0 lg:col-span-3">
                         <input
                             type="email"
                             name="email"
@@ -252,7 +252,7 @@ const ContactForm = () => {
                         </AnimatePresence>
                     </div>
 
-                    <div className="sm:col-span-2 relative ">
+                    <div className="sm:col-span-2 relative">
                         <button
                             className={`text-white absolute inset-x-0 bottom-0 py-1.5 rounded-full text-sm 
                             ${otpButtonDisabled ? 'bg-indigo-300' : ''}
