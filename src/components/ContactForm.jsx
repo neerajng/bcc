@@ -70,6 +70,7 @@ const ContactForm = () => {
                             progress: undefined,
                             theme: "light",
                             transition: Bounce,
+                            onClose: () => window.location.reload(),
                         });
                         resetForm();
                     } else {
