@@ -7,8 +7,8 @@ export default {
       xxs: '280px',
       xs:'375px',
       sm: '480px',
-      md: '768px',
-      lg: '976px',
+      md: '768px',//767 fine
+      lg: '976px',//975 fine
       xl: '1440px',
     },
     extend: {},

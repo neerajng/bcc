@@ -10,8 +10,9 @@ const Navbar = () => {
         setIsOpen(!isOpen);
     };
   return (
-    <div className="navbar sticky z-50 md:px-20 px-10 top-0 left-0 w-full shadow-bottom
-     text-black font-bold ">{/* border-4 border-indigo-600 */}
+    <div className="navbar sticky z-50 max-md:px-10 md:px-10 
+     top-0 left-0 w-full shadow-bottom text-black font-bold ">
+      {/* border-4 border-indigo-600 */}
 
       <div className="navbar-start">
 
