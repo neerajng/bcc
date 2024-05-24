@@ -5,6 +5,7 @@ import HeroSection from '../../components/HeroSection'
 import Section1 from '../../components/Section1'
 import Section2 from '../../components/Section2'
 import Section3 from '../../components/Section3'
+import Footer from '../../components/Footer'
 
 const Landing=()=>{
 
@@ -19,6 +20,7 @@ const Landing=()=>{
         <div className=' py-1'></div>{/* className='bg-sky-100 py-5' */}
         <Section3 />
         <div className=' py-10'></div>{/* className='bg-sky-100 py-5' */}
+        <Footer/>
       </div>
       )
 }
