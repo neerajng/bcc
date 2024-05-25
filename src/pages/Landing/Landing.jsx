@@ -21,6 +21,7 @@ const Landing=()=>{
         <Section3 />
         <div className=' py-10'></div>{/* className='bg-sky-100 py-5' */}
         <Footer/>
+        <div className=' py-6'></div>{/* className='bg-sky-100 py-5' */}
       </div>
       )
 }
