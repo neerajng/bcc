@@ -6,6 +6,8 @@ import { MdError, MdErrorOutline } from 'react-icons/md';
 import { Bounce, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+
 const apiUrl = import.meta.env.DEV ? import.meta.env.VITE_API_URL_DEV : import.meta.env.VITE_API_URL_PROD;
 
 const ContactForm = () => {
@@ -87,7 +89,7 @@ const ContactForm = () => {
             },
         });
 
-
+        
     const handleGetOTP = async (e) => {
         e.preventDefault();
         if (!values.email) {
@@ -109,6 +111,7 @@ const ContactForm = () => {
             if (response.ok) {
                 // OTP email sent successfully
                 const data = await response.json();
+                console.log(errors);
                 console.log(data.message, data.otp);
                 setOtp(data.otp)
                 setOtpButtonDisabled(true);
@@ -122,6 +125,8 @@ const ContactForm = () => {
             console.log('Error sending OTP email:', error);
         }
     };
+
+
 
     return (
         <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg flex flex-col 
