@@ -23,6 +23,7 @@ const ContactForm = () => {
             // Clear timeout when component unmounts or countdown reaches 0
             if (countdownValue === 0) {
                 setOtpButtonDisabled(false);
+                setCountdownValue(60);
             }
 
             return () => clearTimeout(timer);
