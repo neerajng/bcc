@@ -133,7 +133,7 @@ const ContactForm = () => {
         shadow-lg">
 
             <div className="border-b border-gray-900/10 pb-12 ">
-                <h2 className="text-base leading-7  text-indigo-600 font-bold">Send us a Message</h2>
+                <h2 className="text-base leading-7  text-zinc-950 font-bold">Send us a Message</h2>
 
                 <select
                     className="select border-gray-900/10 w-full 
